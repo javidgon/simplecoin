@@ -1,0 +1,26 @@
+version: '3'
+services:
+  node1:
+    environment:
+      - NODE_URL=http://node1:5000
+      - MINER_ACCOUNT_ADDRESS=0faf32a51f4e2b02d2e4c6132c5ef40bac4d075a513bd834d1010ae684f69bff
+      - NETWORK_NODES_URLS=http://node1:5000,http://node2:5000,http://node3:5000
+    build: .
+    ports:
+      - "5001:5000"
+  node2:
+    environment:
+    - NODE_URL=http://node2:5000
+    - MINER_ACCOUNT_ADDRESS=d7c6c56ec955866ef9f78f36133594aadc7342ff04a9351f732ad6bcb35e544f
+    - NETWORK_NODES_URLS=http://node1:5000,http://node2:5000,http://node3:5000
+    build: .
+    ports:
+      - "5002:5000"
+  node3:
+    environment:
+    - NODE_URL=http://node3:5000
+    - MINER_ACCOUNT_ADDRESS=83b36b9d96870e3faee8899153fa3a531158443effd8b29ce7f3f9718a92e718
+    - NETWORK_NODES_URLS=http://node1:5000,http://node2:5000,http://node3:5000
+    build: .
+    ports:
+      - "5003:5000"

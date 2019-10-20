@@ -1,0 +1,11 @@
+version: '3'
+services:
+  node1:
+    environment:
+      - MINER_SLEEP_TIME_IN_SECONDS=5
+  node2:
+    environment:
+      - MINER_SLEEP_TIME_IN_SECONDS=8
+  node3:
+    environment:
+      - MINER_SLEEP_TIME_IN_SECONDS=11
